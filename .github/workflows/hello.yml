@@ -12,8 +12,12 @@ jobs:
       - name: Say hello
         run: |
           echo "Hello World!"
+
       - name: date
         run: date
+
+      - name: ls
+        run: ls
 
 #  display_date_job:
 #    steps:
