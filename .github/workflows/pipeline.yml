@@ -1,0 +1,17 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-20.04
+    steps:
+      with:
+        node-version: '16'
+    - name: npm install
+      run: npm install
+    - name: lint
+      run: npm run eslint
