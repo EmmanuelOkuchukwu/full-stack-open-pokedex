@@ -27,3 +27,10 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5001
+      - name: pushing code to heroku
+        uses: akhileshns/heroku-deploy@v3.8.8
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+          with:
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_app_name: frozen-caverns-98713
+            heroku_email: emmanza2@gmail.com
