@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Say hello
+      - name: date
         run: |
-          echo "Hello World!"
-
-  display_date_job:
-    steps:
-      - name: Now it is
-        run: |
+          echo "Hello World!" |
           date
+
+#  display_date_job:
+#    steps:
+#      - name: Now it is
+#        run: |
+#          date
