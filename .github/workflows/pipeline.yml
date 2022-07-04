@@ -35,3 +35,4 @@ jobs:
           heroku_app_name: frozen-caverns-98713
           heroku_email: emmanza2@gmail.com
           healthcheck: "https://frozen-caverns-98713.herokuapp.com/health"
+          checkstring: "ok"
