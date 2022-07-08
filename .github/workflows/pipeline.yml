@@ -35,11 +35,12 @@ jobs:
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: frozen-caverns-98713
-          heroku_email: emmanza2@gmail.com
-#           healthcheck: "https://frozen-caverns-98713.herokuapp.com/health"
+          heroku_app_name: "frozen-caverns-98713"
+          heroku_email: "emmanza2@gmail.com"
+          healthcheck: "https://frozen-caverns-98713.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+          delay: 5
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04

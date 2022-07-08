@@ -1,0 +1,13 @@
+name: Periodic Health Check
+
+on:
+
+jobs:
+  periodic_health_check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check@v2
+        with:
+          url: https://frozen-caverns-98713.herokuapp.com/
+          follow-redirect: false
